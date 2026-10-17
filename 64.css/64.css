@@ -1,0 +1,279 @@
+
+    * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.store-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #555;
+  font-size: 13px;
+}
+
+.search-bar input {
+  background-color: #d97706;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 30px;
+  width: 280px;
+  color: #fff;
+}
+
+.search-bar input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* Checkbox Filters */
+.filter-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  padding: 24px 32px;
+  max-width: 1000px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #4b5563;
+  cursor: pointer;
+}
+
+.checkbox-label input {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Books Grid */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px 16px;
+  padding: 20px 32px 40px 32px;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.book-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 10px;
+}
+
+.book-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #111827;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
+}
+
+.book-author {
+  font-size: 10px;
+  color: #9ca3af;
+  margin-bottom: 10px;
+}
+
+.btn-add-cart {
+  background-color: #ea580c;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 0;
+  width: 100%;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-add-cart:hover {
+  background-color: #c2410c;
+}
+
+/* Signup Banner */
+.signup-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 60px;
+  border-top: 1px solid #f3f4f6;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.signup-banner h2 {
+  color: #ea580c;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.btn-signup {
+  background-color: #ea580c;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 48px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Footer */
+.footer {
+  background-color: #fde68a;
+  padding: 40px 40px 20px 40px;
+}
+
+.newsletter-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.newsletter-section h3 {
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #1f2937;
+}
+
+.newsletter-box {
+  display: inline-flex;
+  background: #ffffff;
+  padding: 3px;
+  border-radius: 6px;
+}
+
+.newsletter-box input {
+  border: none;
+  outline: none;
+  padding: 6px 12px;
+  font-size: 11px;
+  width: 180px;
+}
+
+.btn-subscribe {
+  background-color: #ea580c;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 14px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.footer-links-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.footer-logo {
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #4b5563;
+  font-size: 11px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  font-size: 10px;
+  color: #6b7280;
+}
+
+.lang-select {
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 10px;
+}
+
+
+.social-icons span {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .books-grid { grid-template-columns: repeat(3, 1fr); }
+  .signup-banner { flex-direction: column; gap: 16px; }
+  .footer-links-row { flex-direction: column; gap: 16px; }
+}
+
+@media (max-width: 550px) {
+  .books-grid { grid-template-columns: repeat(2, 1fr); }
+  .filter-section { gap: 12px; }
+}
