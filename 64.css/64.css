@@ -280,8 +280,6 @@ body {
   cursor: pointer;
 }
 
-
-
 /* Responsive */
 @media (max-width: 900px) {
   .books-grid { grid-template-columns: repeat(3, 1fr); }
@@ -289,7 +287,130 @@ body {
   .footer-links-row { flex-direction: column; gap: 16px; }
 }
 
-@media (max-width: 550px) {
-  .books-grid { grid-template-columns: repeat(2, 1fr); }
-  .filter-section { gap: 12px; }
+@media (max-width: 800px) {
+  .navbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "logo actions"
+      "nav nav"
+      "search search";
+    gap: 16px;
+    padding: 16px 20px;
+  }
+
+  .logo { grid-area: logo; }
+  .nav-menu {
+    grid-area: nav;
+    justify-content: center;
+  }
+
+  .search-bar {
+    grid-area: search;
+    width: 100%;
+  }
+
+  .search-bar input {
+    width: 100%;
+    min-height: 42px;
+  }
+
+  .nav-right {
+    grid-area: actions;
+    justify-self: end;
+  }
+
+  .page-intro { padding: 24px 20px 0; }
+
+  .filter-section {
+    gap: 12px 18px;
+    padding: 20px;
+  }
+
+  .checkbox-label {
+    min-height: 32px;
+    font-size: 13px;
+  }
+
+  .books-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 12px;
+    padding: 12px 20px 32px;
+  }
+
+  .book-card img {
+    height: clamp(150px, 48vw, 220px);
+  }
+
+  .book-title {
+    min-height: 32px;
+    height: auto;
+    font-size: 13px;
+  }
+
+  .book-author { font-size: 12px; }
+
+  .btn-add-cart {
+    min-height: 40px;
+    font-size: 13px;
+  }
+
+  .signup-banner { padding: 28px 20px; }
+
+  .footer { padding: 32px 20px 20px; }
+
+  .newsletter-box {
+    display: flex;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .newsletter-box input {
+    flex: 1;
+    min-width: 0;
+    min-height: 40px;
+    font-size: 13px;
+  }
+
+  .btn-subscribe {
+    min-height: 40px;
+    font-size: 12px;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px 18px;
+  }
+
+  .footer-links a { font-size: 13px; }
+
+  .footer-bottom {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .copyright { width: 100%; }
+
+  .social-icons span {
+    display: inline-block;
+    padding: 4px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .navbar { padding: 14px 16px; }
+  .logo { font-size: 16px; }
+  .nav-menu { gap: 16px; }
+  .page-intro,
+  .filter-section { padding-right: 16px; padding-left: 16px; }
+  .page-intro h1 { font-size: 21px; }
+  .books-grid { gap: 20px 10px; padding-right: 16px; padding-left: 16px; }
+  .signup-banner h2 { font-size: 19px; text-align: center; }
+  .footer { padding-right: 16px; padding-left: 16px; }
 }
