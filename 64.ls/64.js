@@ -37,37 +37,26 @@ const books = [
         </div>
       </header>
 
-      <main id="home">
-        <section className="page-intro">
-          <h1>Find your next favorite book at Book Haven</h1>
-          <p>Explore books across fiction, fantasy, romance, history, mystery, and more.</p>
-        </section>
+      {/* Checkboxes Filters */}
+      <section className="filter-section">
+        {genres.map((genre, idx) => (
+          <label key={idx} className="checkbox-label">
+            <input type="checkbox" />
+            <span>{genre}</span>
+          </label>
+        ))}
+      </section>
 
-        <section className="filter-section" aria-label="Filter books by genre">
-          {genres.map((genre, idx) => (
-            <label key={idx} className="checkbox-label">
-              <input type="checkbox" />
-              <span>{genre}</span>
-            </label>
-          ))}
-        </section>
-
-        <section className="books-grid" id="book" aria-label="Featured books">
-          {books.map((book) => (
-            <article key={book.id} className="book-card">
-              <img
-                src={book.img}
-                alt={book.title}
-                loading={book.id === 1 ? "eager" : "lazy"}
-                decoding="async"
-                fetchPriority={book.id === 1 ? "high" : "auto"}
-              />
-              <h2 className="book-title">{book.title}</h2>
-              <p className="book-author">{book.author}</p>
-              <button className="btn-add-cart">Add to Cart</button>
-            </article>
-          ))}
-        </section>
+      {/* Books Grid */}
+      <main className="books-grid">
+        {books.map((book) => (
+          <div key={book.id} className="book-card">
+            <img src={book.img} alt={book.title} />
+            <h3 className="book-title">{book.title}</h3>
+            <p className="book-author">{book.author}</p>
+            <button className="btn-add-cart">Add to Cart</button>
+          </div>
+        ))}
       </main>
 
       {/* Banner Sign Up */}
@@ -100,6 +89,7 @@ const books = [
         </div>
 
 
+
         <div className="footer-bottom">
           <select className="lang-select">
             <option>English</option>
@@ -117,5 +107,5 @@ const books = [
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById("app"));
+const root = ReactDOM.createRoot(document.getElementById("bo"));
 root.render(<App />);
