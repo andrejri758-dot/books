@@ -18,65 +18,72 @@ const books = [
 ];
 
  function App() {
-  return (
-    <div className="store-container">
-      {/* Navbar */}
-      <header className="navbar">
-        <div className="logo">🟠 Book Haven</div>
-        <nav className="nav-menu">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#book">Book</a>
-        </nav>
-        <div className="search-bar">
-          <input type="text" placeholder="Search..." />
-        </div>
-        <div className="nav-right">
-          <span className="account">Account</span>
-          <span className="cart-icon">🛒</span>
-        </div>
-      </header>
+   return (
+     <div className="store-container" id="home">
+       <header className="navbar">
+         <a className="logo" href="#home">🟠 Book Haven</a>
+         <nav className="nav-menu" aria-label="Main navigation">
+           <a href="#home">Home</a>
+           <a href="#about">About</a>
+           <a href="#book">Book</a>
+         </nav>
+         <div className="search-bar" role="search">
+           <input type="search" aria-label="Search books" placeholder="Search books..." />
+         </div>
+         <div className="nav-right">
+           <span className="account">Account</span>
+           <span className="cart-icon">🛒</span>
+         </div>
+       </header>
 
-      {/* Checkboxes Filters */}
-      <section className="filter-section">
-        {genres.map((genre, idx) => (
-          <label key={idx} className="checkbox-label">
-            <input type="checkbox" />
+       <section className="filter-section" aria-label="Filter books by genre">
+         {genres.map((genre, idx) => (
+           <label key={idx} className="checkbox-label">
+             <input type="checkbox" />
             <span>{genre}</span>
           </label>
         ))}
       </section>
 
-      {/* Books Grid */}
-      <main className="books-grid">
-        {books.map((book) => (
-          <div key={book.id} className="book-card">
-            <img src={book.img} alt={book.title} />
-            <h3 className="book-title">{book.title}</h3>
-            <p className="book-author">{book.author}</p>
-            <button className="btn-add-cart">Add to Cart</button>
-          </div>
-        ))}
+      <main>
+        <section className="page-intro" aria-labelledby="page-title">
+          <h1 id="page-title">Discover your next favorite book</h1>
+          <p>Explore a handpicked collection of books across popular genres, from fiction and fantasy to history and mystery.</p>
+        </section>
+
+        <section id="book" className="books-grid" aria-label="Featured books">
+          {books.map((book) => (
+            <article key={book.id} className="book-card">
+              <img
+                src={book.img}
+                alt={`Cover of ${book.title} by ${book.author}`}
+                loading={book.id === 1 ? 'eager' : 'lazy'}
+                decoding="async"
+              />
+              <h2 className="book-title">{book.title}</h2>
+              <p className="book-author">by {book.author}</p>
+              <button className="btn-add-cart" type="button">Add to Cart</button>
+            </article>
+          ))}
+        </section>
       </main>
 
-      {/* Banner Sign Up */}
-      <section className="signup-banner">
-        <h2>Sign up for our new collection</h2>
-        <button className="btn-signup">Sign Up</button>
+      <section id="about" className="signup-banner" aria-labelledby="signup-title">
+        <h2 id="signup-title">Sign up for our new collection</h2>
+        <button className="btn-signup" type="button">Sign Up</button>
       </section>
 
-      {/* Footer Newsletter & Links */}
       <footer className="footer">
-        <div className="newsletter-section">
-          <h3>Subscribe our new offers !</h3>
+        <section className="newsletter-section" aria-labelledby="newsletter-title">
+          <h2 id="newsletter-title">Subscribe to our latest offers</h2>
           <div className="newsletter-box">
-            <input type="email" placeholder="📧 Read your email" />
-            <button className="btn-subscribe">Subscribe</button>
+            <input type="email" aria-label="Email address" placeholder="Enter your email" />
+            <button className="btn-subscribe" type="button">Subscribe</button>
           </div>
-        </div>
+        </section>
 
         <div className="footer-links-row">
-          <div className="footer-logo">🟠 Book Haven</div>
+          <a className="footer-logo" href="#home">🟠 Book Haven</a>
           <div className="footer-links">
             <a href="#pricing">Pricing</a>
             <a href="#about">About us</a>
@@ -92,7 +99,7 @@ const books = [
 
         <div className="footer-bottom">
           <select className="lang-select">
-            <option>English</option>
+            <option value="en">English</option>
           </select>
           <p className="copyright">©2026 Brand Inc. — Privacy — Terms — Sitemap</p>
           <div className="social-icons">

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://andrejri758-dot.github.io/books/sitemap.xml
